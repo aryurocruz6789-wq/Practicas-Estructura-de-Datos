@@ -1,0 +1,22 @@
+# Makefile sencillo - Proyecto P8
+
+PROG = P8.exe
+SRC = main.cpp Pila.cpp
+OBJ = main.o Pila.o
+
+CXX = g++
+CXXFLAGS = -Wall
+
+all: $(PROG)
+
+$(PROG): $(OBJ)
+	$(CXX) $(OBJ) -o $(PROG)
+
+main.o: main.cpp
+	$(CXX) -c main.cpp
+
+Pila.o: Pila.cpp
+	$(CXX) -c Pila.cpp
+
+clean:
+	del *.o *.exe
